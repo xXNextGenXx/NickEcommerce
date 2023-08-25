@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react-hooks/exhaustive-deps */
 import {
   View,
   Text,
@@ -36,7 +38,7 @@ const Home = () => {
       <Header
         leftIcon={require('../../images/menu.png')}
         rightIcon={require('../../images/cart.png')}
-        title={'Grocery App'}
+        title={'Bazar do Nickolas'}
         onClickLeftIcon={() => {
           navigation.openDrawer();
         }}
@@ -64,7 +66,7 @@ const Home = () => {
                     ? item.description.substring(0, 30) + '...'
                     : item.description}
                 </Text>
-                <Text style={styles.price}>{'$' + item.price}</Text>
+                <Text style={styles.price}>{'R$' + item.price}</Text>
               </View>
             </TouchableOpacity>
           );

@@ -1,4 +1,6 @@
+/* eslint-disable prettier/prettier */
 import {StyleSheet} from 'react-native';
+
 
 export const getApiCall = async url => {
   const res = await fetch(url);

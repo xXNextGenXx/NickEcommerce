@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   View,
   Text,
@@ -28,7 +29,7 @@ const Search = () => {
 
   return (
     <View style={styles.container}>
-      <Header title={'Search Items'} />
+      <Header title={'Buscar Itens'} style={{ textAlign: 'center'}} />
       <View style={styles.searchView}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <Image
@@ -41,7 +42,7 @@ const Search = () => {
               setSearch(txt);
               filterData(txt);
             }}
-            placeholder="Search items here..."
+            placeholder="Pesquise itens aqui..."
             style={styles.input}
           />
         </View>
@@ -85,7 +86,7 @@ const Search = () => {
                       ? item.description.substring(0, 30) + '...'
                       : item.description}
                   </Text>
-                  <Text style={styles.price}>{'$' + item.price}</Text>
+                  <Text style={styles.price}>{'R$' + item.price}</Text>
                 </View>
               </TouchableOpacity>
             );

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   Image,
   StyleSheet,
@@ -19,7 +20,7 @@ const AddAddress = () => {
   const navigation = useNavigation();
   const [type, setType] = useState(
     route.params.type == 'edit'
-      ? route.params.data.type == 'Home'
+      ? route.params.data.type == 'Casa'
         ? 1
         : 2
       : 1,
@@ -39,25 +40,25 @@ const AddAddress = () => {
     <View style={styles.container}>
       <Header
         leftIcon={require('../images/back.png')}
-        title={route.params.type == 'edit' ? 'Edit Address' : 'Add New Address'}
+        title={route.params.type == 'edit' ? 'Editar Endereço' : 'Adicionar novo endereço'}
         onClickLeftIcon={() => {
           navigation.goBack();
         }}
       />
       <TextInput
-        placeholder="Enter State"
+        placeholder="Insira o estado"
         style={[styles.input, {marginTop: 50}]}
         value={state}
         onChangeText={txt => setState(txt)}
       />
       <TextInput
-        placeholder="Enter City"
+        placeholder="Insira a cidade"
         style={[styles.input, {marginTop: 15}]}
         value={city}
         onChangeText={txt => setCity(txt)}
       />
       <TextInput
-        placeholder="Enter Pincode"
+        placeholder="Insira o CEP"
         keyboardType={'number-pad'}
         style={[styles.input, {marginTop: 15}]}
         value={pincode}
@@ -67,7 +68,7 @@ const AddAddress = () => {
         <TouchableOpacity
           style={[
             styles.typeBtn,
-            {borderWidth: 0.5, borderColor: type == 1 ? 'orange' : 'black'},
+            {borderWidth: 0.5, borderColor: type == 1 ? '#6FFACC' : 'black'},
           ]}
           onPress={() => {
             setType(1);
@@ -80,12 +81,12 @@ const AddAddress = () => {
             }
             style={styles.radio}
           />
-          <Text style={styles.radioText}>{'Home'}</Text>
+          <Text style={styles.radioText}>{'Casa'}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
             styles.typeBtn,
-            {borderWidth: 0.5, borderColor: type == 2 ? 'orange' : 'black'},
+            {borderWidth: 0.5, borderColor: type == 2 ? '#6FFACC' : 'black'},
           ]}
           onPress={() => {
             setType(2);
@@ -98,12 +99,12 @@ const AddAddress = () => {
             }
             style={styles.radio}
           />
-          <Text style={styles.radioText}>{'Office'}</Text>
+          <Text style={styles.radioText}>{'Trabalho'}</Text>
         </TouchableOpacity>
       </View>
       <CustomButton
-        bg={'#FE9000'}
-        title={'Save Address'}
+        bg={'#00CBDD'}
+        title={'Salvar endereço'}
         color="#fff"
         onClick={() => {
           if (route.params.type == 'edit') {
@@ -112,7 +113,7 @@ const AddAddress = () => {
                 state: state,
                 city: city,
                 pincode: pincode,
-                type: type == 1 ? 'Home' : 'office',
+                type: type == 1 ? 'Casa' : 'Trabalho',
                 id: route.params.data.id,
               }),
               navigation.goBack(),
@@ -123,7 +124,7 @@ const AddAddress = () => {
                 state: state,
                 city: city,
                 pincode: pincode,
-                type: type == 1 ? 'Home' : 'office',
+                type: type == 1 ? 'Casa' : 'Trabalho',
                 id: uuid.v4(),
               }),
               navigation.goBack(),
@@ -145,7 +146,7 @@ const styles = StyleSheet.create({
   addButton: {
     width: 50,
     height: 50,
-    backgroundColor: '#EC8A00',
+    backgroundColor: '#0095DD',
     borderRadius: 25,
     position: 'absolute',
     bottom: 50,

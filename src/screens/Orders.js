@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
 import React from 'react';
 import Header from '../common/Header';
@@ -10,7 +11,7 @@ const Orders = ({navigation}) => {
     <View style={styles.container}>
       <Header
         leftIcon={require('../images/back.png')}
-        title={'Orders'}
+        title={'Pedidos'}
         onClickLeftIcon={() => {
           navigation.goBack();
         }}
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.3,
     padding: 10,
     borderRadius: 10,
-    borderColor: '#7D7D7DF2',
+    borderColor: '#0095DD',
   },
   productItem: {
     width: '95%',

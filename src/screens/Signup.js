@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {View, Text, StyleSheet, TextInput} from 'react-native';
 import React, {useState} from 'react';
 import CustomButton from '../common/CustomButton';
@@ -24,46 +25,46 @@ const Signup = () => {
         userId: uid,
       })
       .then(() => {
-        console.log('User added!');
+        console.log('Usuário adicionado!');
         navigation.navigate('Login');
       });
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{'Sign up'}</Text>
+      <Text style={styles.title}>{'Criar conta'}</Text>
       <TextInput
-        placeholder="Enter Name"
+        placeholder="Insira o seu nome"
         style={styles.input}
         value={name}
         onChangeText={txt => setName(txt)}
       />
       <TextInput
-        placeholder="Enter Email"
+        placeholder="Insira seu email"
         style={styles.input}
         value={email}
         onChangeText={txt => setEmail(txt)}
       />
       <TextInput
-        placeholder="Enter Mobile"
+        placeholder="Insira seu celular"
         style={styles.input}
         value={mobile}
         onChangeText={txt => setMobile(txt)}
       />
       <TextInput
-        placeholder="Enter password"
+        placeholder="Insira sua senha"
         style={styles.input}
         value={pass}
         onChangeText={txt => setPass(txt)}
       />
       <TextInput
-        placeholder="Enter Confirm Password"
+        placeholder="Confirme sua senha"
         style={styles.input}
         value={confirmPass}
         onChangeText={txt => setConfirmPass(txt)}
       />
       <CustomButton
-        bg={'#E27800'}
-        title={'Sign up'}
+        bg={'#0095DD'}
+        title={'Criar conta'}
         color={'#fff'}
         onClick={() => {
           addUser();

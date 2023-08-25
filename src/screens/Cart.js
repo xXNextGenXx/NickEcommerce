@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   View,
   Text,
@@ -38,7 +39,7 @@ const Cart = () => {
   return (
     <View style={styles.container}>
       <Header
-        title={'Cart Items'}
+        title={'Meu carrinho'}
         leftIcon={require('../images/back.png')}
         onClickLeftIcon={() => {
           navigation.goBack();
@@ -67,7 +68,7 @@ const Cart = () => {
                     : item.description}
                 </Text>
                 <View style={styles.qtyview}>
-                  <Text style={styles.price}>{'$' + item.price}</Text>
+                  <Text style={styles.price}>{'R$' + item.price}</Text>
                   <TouchableOpacity
                     style={styles.btn}
                     onPress={() => {
@@ -95,7 +96,7 @@ const Cart = () => {
       />
       {cartItems.length < 1 && (
         <View style={styles.noItems}>
-          <Text>No Items in Cart</Text>
+          <Text>Não existem itens no seu carrinho</Text>
         </View>
       )}
       {cartItems.length > 0 && (

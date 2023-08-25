@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {View, Text, StyleSheet, TextInput, Alert} from 'react-native';
 import React, {useState} from 'react';
 import CustomButton from '../common/CustomButton';
@@ -38,22 +39,22 @@ const Login = () => {
       <Text style={styles.title}>{'Login'}</Text>
 
       <TextInput
-        placeholder="Enter Email"
+        placeholder="Digite o e-mail"
         style={styles.input}
         value={email}
         onChangeText={txt => setEmail(txt)}
       />
 
       <TextInput
-        placeholder="Enter password"
+        placeholder="Digite a senha"
         style={styles.input}
         value={pass}
         onChangeText={txt => setPass(txt)}
       />
 
       <CustomButton
-        bg={'#E27800'}
-        title={'Login'}
+        bg={'#0095DD'}
+        title={'Entrar'}
         color={'#fff'}
         onClick={() => {
           loginUser();
@@ -64,7 +65,7 @@ const Login = () => {
         onPress={() => {
           navigation.navigate('Signup');
         }}>
-        {'Sign up'}
+        {'Criar conta'}
       </Text>
     </View>
   );

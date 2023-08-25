@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const {createSlice} = require('@reduxjs/toolkit');
 
 const OrderSlice = createSlice({

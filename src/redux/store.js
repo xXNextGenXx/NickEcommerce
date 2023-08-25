@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const {configureStore} = require('@reduxjs/toolkit');
 
 import ProductReduer from './slices/ProductsSlice';

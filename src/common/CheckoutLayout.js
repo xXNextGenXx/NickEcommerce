@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   View,
   Text,
@@ -13,8 +14,8 @@ const CheckoutLayout = ({total, items}) => {
   return (
     <View style={styles.container}>
       <View style={styles.tab}>
-        <Text>{`(items ${items} )`}</Text>
-        <Text style={styles.total}>{'Total: $' + total}</Text>
+        <Text>{`(itens ${items} )`}</Text>
+        <Text style={styles.total}>{'Total: R$' + total}</Text>
       </View>
       <View style={styles.tab}>
         <TouchableOpacity
@@ -22,7 +23,7 @@ const CheckoutLayout = ({total, items}) => {
           onPress={() => {
             navigation.navigate('Checkout');
           }}>
-          <Text style={{color: '#fff'}}>Checkout</Text>
+          <Text style={{color: '#fff'}}>Pagamento</Text>
         </TouchableOpacity>
       </View>
     </View>

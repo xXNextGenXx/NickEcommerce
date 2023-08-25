@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react-hooks/exhaustive-deps */
 import {
   FlatList,
   Image,
@@ -26,11 +28,11 @@ const Addresses = () => {
       'MY_ADDRESS',
       '' +
         item.city +
-        ',' +
+        ', ' +
         item.state +
-        ',' +
+        ', ' +
         item.pincode +
-        ',type:' +
+        '. Tipo: ' +
         item.type,
     );
     navigation.goBack();
@@ -39,7 +41,7 @@ const Addresses = () => {
     <View style={styles.container}>
       <Header
         leftIcon={require('../images/back.png')}
-        title={'My Addresses'}
+        title={'Meus endereços'}
         onClickLeftIcon={() => {
           navigation.goBack();
         }}
@@ -64,9 +66,9 @@ const Addresses = () => {
               onPress={() => {
                 defaultAddress(item);
               }}>
-              <Text style={styles.state}>{`State:  ${item.state}`}</Text>
-              <Text style={styles.state}>{`City:  ${item.city}`}</Text>
-              <Text style={styles.state}>{`Pincode:  ${item.pincode}`}</Text>
+              <Text style={styles.state}>{`Estado:  ${item.state}`}</Text>
+              <Text style={styles.state}>{`Cidade:  ${item.city}`}</Text>
+              <Text style={styles.state}>{`CEP:  ${item.pincode}`}</Text>
               <Text
                 style={[
                   styles.state,
@@ -133,7 +135,7 @@ const styles = StyleSheet.create({
   addButton: {
     width: 50,
     height: 50,
-    backgroundColor: '#EC8A00',
+    backgroundColor: '#0095DD',
     borderRadius: 25,
     position: 'absolute',
     bottom: 50,

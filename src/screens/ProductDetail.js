@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   View,
   Text,
@@ -40,7 +41,7 @@ const ProductDetail = () => {
       <Header
         leftIcon={require('../images/back.png')}
         rightIcon={require('../images/cart.png')}
-        title={'Product Detail'}
+        title={'Detalhes do produto'}
         onClickLeftIcon={() => {
           navigation.goBack();
         }}
@@ -51,8 +52,8 @@ const ProductDetail = () => {
         <Text style={styles.title}>{route.params.data.title}</Text>
         <Text style={styles.desc}>{route.params.data.description}</Text>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <Text style={[styles.price, {color: '#000'}]}>{'Price:'}</Text>
-          <Text style={styles.price}>{' $' + route.params.data.price}</Text>
+          <Text style={[styles.price, {color: '#000'}]}>{'Valor:'}</Text>
+          <Text style={styles.price}>{' R$' + route.params.data.price}</Text>
           <View style={styles.qtyView}>
             <TouchableOpacity
               style={styles.btn}
@@ -89,8 +90,8 @@ const ProductDetail = () => {
         </TouchableOpacity>
 
         <CustomButton
-          bg={'#FF9A0C'}
-          title={'Add To Cart'}
+          bg={'#0095DD'}
+          title={'Adicionar ao carrinho'}
           color={'#fff'}
           onClick={() => {
             if (checkUserStatus()) {

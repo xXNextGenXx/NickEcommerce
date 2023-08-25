@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   View,
   Text,
@@ -18,7 +19,7 @@ const Wishlist = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Header title={'Wishlist Items'} />
+      <Header title={'Lista de Favoritos'} />
       <FlatList
         data={wishlistItems}
         renderItem={({item, index}) => {
@@ -41,7 +42,7 @@ const Wishlist = () => {
                     ? item.description.substring(0, 30) + '...'
                     : item.description}
                 </Text>
-                <Text style={styles.price}>{'$' + item.price}</Text>
+                <Text style={styles.price}>{'R$' + item.price}</Text>
               </View>
             </TouchableOpacity>
           );

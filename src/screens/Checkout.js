@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   View,
   Text,
@@ -34,7 +35,7 @@ const Checkout = () => {
   const [selectedMethod, setSelectedMethod] = useState(0);
   const isFocused = useIsFocused();
   const [selectedAddress, setSelectedAddress] = useState(
-    'Please Select Address',
+    'Selecione o endereço',
   );
   const dispatch = useDispatch();
   useEffect(() => {
@@ -69,7 +70,7 @@ const Checkout = () => {
     }
     const data = {
       items: cartItems,
-      amount: '$' + getTotal(),
+      amount: 'R$' + getTotal(),
       address: selectedAddress,
       paymentId: paymentId,
       paymentStatus: selectedMethod == 3 ? 'Pending' : 'Success',
@@ -103,30 +104,30 @@ const Checkout = () => {
         contact: '9191919191',
         name: 'Razorpay Software',
       },
-      theme: {color: '#3E8BFF'},
+      theme: {color: '#0159B7'},
     };
     RazorpayCheckout.open(options)
       .then(data => {
         // handle success
-        //   alert(`Success: ${data.razorpay_payment_id}`);
+        //   a(`Success: ${data.razorpay_payment_id}`);
         orderPlace(data.razorpay_payment_id);
       })
       .catch(error => {
         // handle failure
-        alert(`Error: ${error.code} | ${error.description}`);
+        alert(`Erro de pagamento, tentei seguir a documentação do Razor e uns videos BRs e indianos mas não tive sucesso em implementar direito, vou correndo com outras coisas e se der tempo termino aqui depois.`);
       });
   };
   return (
     <View style={styles.container}>
       <Header
         leftIcon={require('../images/back.png')}
-        title={'Checkout'}
+        title={'Pagamento'}
         onClickLeftIcon={() => {
           navigation.goBack();
         }}
       />
       <ScrollView>
-        <Text style={styles.title}>Added Items</Text>
+        <Text style={styles.title}>Itens Adicionados</Text>
         <View>
           <FlatList
             data={cartItems}
@@ -151,7 +152,7 @@ const Checkout = () => {
                         : item.description}
                     </Text>
                     <View style={styles.qtyview}>
-                      <Text style={styles.price}>{'$' + item.price}</Text>
+                      <Text style={styles.price}>{'R$' + item.price}</Text>
                       <TouchableOpacity
                         style={styles.btn}
                         onPress={() => {
@@ -181,10 +182,10 @@ const Checkout = () => {
         <View style={styles.totalView}>
           <Text style={styles.title}>Total</Text>
           <Text style={[styles.title, {marginRight: 20}]}>
-            {'$' + getTotal()}
+            {'R$' + getTotal()}
           </Text>
         </View>
-        <Text style={styles.title}>Select Payment Mode</Text>
+        <Text style={styles.title}>Selecione o método de pagamento</Text>
         <TouchableOpacity
           style={styles.paymentMethods}
           onPress={() => {
@@ -198,10 +199,10 @@ const Checkout = () => {
             }
             style={[
               styles.img,
-              {tintColor: selectedMethod == 0 ? 'orange' : 'black'},
+              {tintColor: selectedMethod == 0 ? '#6FFACC' : 'black'},
             ]}
           />
-          <Text style={styles.paymentMethdodsTxt}>Credit Card</Text>
+          <Text style={styles.paymentMethdodsTxt}>Cartão de crédito</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.paymentMethods}
@@ -216,10 +217,10 @@ const Checkout = () => {
             }
             style={[
               styles.img,
-              {tintColor: selectedMethod == 1 ? 'orange' : 'black'},
+              {tintColor: selectedMethod == 1 ? '#6FFACC' : 'black'},
             ]}
           />
-          <Text style={styles.paymentMethdodsTxt}>Debit Card</Text>
+          <Text style={styles.paymentMethdodsTxt}>Cartão de débito</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.paymentMethods}
@@ -234,10 +235,10 @@ const Checkout = () => {
             }
             style={[
               styles.img,
-              {tintColor: selectedMethod == 2 ? 'orange' : 'black'},
+              {tintColor: selectedMethod == 2 ? '#6FFACC' : 'black'},
             ]}
           />
-          <Text style={styles.paymentMethdodsTxt}>UPI</Text>
+          <Text style={styles.paymentMethdodsTxt}>PIX</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.paymentMethods}
@@ -252,22 +253,22 @@ const Checkout = () => {
             }
             style={[
               styles.img,
-              {tintColor: selectedMethod == 3 ? 'orange' : 'black'},
+              {tintColor: selectedMethod == 3 ? '#6FFACC' : 'black'},
             ]}
           />
-          <Text style={styles.paymentMethdodsTxt}>Cash on Delivery</Text>
+          <Text style={styles.paymentMethdodsTxt}>Pagamento na entrega</Text>
         </TouchableOpacity>
         <View style={styles.addressView}>
-          <Text style={styles.title}>Address</Text>
+          <Text style={styles.title}>Endereço</Text>
           <Text
             style={[
               styles.title,
-              {textDecorationLine: 'underline', color: '#0269A0FB'},
+              {textDecorationLine: 'underline', color: '#0159B7'},
             ]}
             onPress={() => {
               navigation.navigate('Addresses');
             }}>
-            Edit Address
+            Editar Endereço
           </Text>
         </View>
         <Text
@@ -279,7 +280,7 @@ const Checkout = () => {
         </Text>
         <CustomButton
           bg={'green'}
-          title={'Pay & Order'}
+          title={'Finalizar Pedido'}
           color={'#fff'}
           onClick={() => {
             payNow();

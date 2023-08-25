@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Header from '../../common/Header';
@@ -12,37 +13,37 @@ const User = () => {
   };
   return (
     <View style={styles.container}>
-      <Header title={'Profile'} />
+      <Header title={'Meu Perfil'} />
       <Image
         source={require('../../images/default_user.png')}
         style={styles.user}
       />
-      <Text style={styles.name}>{'Gaurav'}</Text>
+      <Text style={styles.name}>{'Nickolas Madeiro'}</Text>
       <Text style={[styles.name, {fontSize: 16, marginTop: 0}]}>
-        {'gaurav@gmail.com'}
+        {'paulomadeirodigital@gmail.com'}
       </Text>
       <TouchableOpacity style={[styles.tab, {marginTop: 40}]}>
-        <Text style={styles.txt}>Edit Profile</Text>
+        <Text style={styles.txt}>Editar Perfil</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[styles.tab, {marginTop: 10}]}
         onPress={() => {
           navigation.navigate('Orders');
         }}>
-        <Text style={styles.txt}>Orders</Text>
+        <Text style={styles.txt}>Pedidos</Text>
       </TouchableOpacity>
       <TouchableOpacity style={[styles.tab, {marginTop: 10}]}>
-        <Text style={styles.txt}>Address</Text>
+        <Text style={styles.txt}>Endereço</Text>
       </TouchableOpacity>
       <TouchableOpacity style={[styles.tab, {marginTop: 10}]}>
-        <Text style={styles.txt}>Payment Methods</Text>
+        <Text style={styles.txt}>Métodos de Pagamento</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[styles.tab, {marginTop: 10}]}
         onPress={() => {
           logout();
         }}>
-        <Text style={styles.txt}>Log out</Text>
+        <Text style={styles.txt}>Sair da Conta</Text>
       </TouchableOpacity>
     </View>
   );
